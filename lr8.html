@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ВАРИАНТ 4 - БУРГЕР</title>
+    <link rel="stylesheet" href="sss.css">
+</head>
+<body>
+
+    <!-- ========== ШАПКА ========== -->
+    <header>
+        <a href="#" class="logo">ВАРИАНТ 4</a>
+        
+        <input type="checkbox" id="burgerToggle" class="burger-checkbox">
+        
+        <label for="burgerToggle" class="burger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </label>
+
+        <nav class="main-nav">
+            <ul>
+                <li><a href="#">Главная</a></li>
+                <li><a href="#">Услуги</a></li>
+                <li><a href="#">Портфолио</a></li>
+                <li><a href="#">Контакты</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- ========== СЕТКА ========== -->
+    <div class="container">
+        
+        <!-- Блок 1: Текст (стихи) -->
+        <div class="box poem-box">
+            <p>Вы любите розы?
+а я на них срал!
+стране нужны паровозы,
+нам нужен металл!
+товарищ!
+не охай,
+не ахай!
+не дёргай узду!
+коль выполнил план,
+посылай всех
+в пизdу
+не выполнил -
+сам
+иди
+на
+нахyй.</p>
+        </div>
+
+        <!-- Блок 2: Фотография -->
+        <div class="box photo-box">
+            <div class="photo-placeholder">
+               <img src="https://upload.wikimedia.org/wikipedia/commons/0/04/%D0%92%D0%BB%D0%B0%D0%B4%D0%B8%D0%BC%D0%B8%D1%80_%D0%9F%D1%83%D1%82%D0%B8%D0%BD_%282025-09-30%29.jpg" alt="Случайное фото">
+            </div>
+        </div>
+
+        <!-- Блок 3: Форма 1 (Mr. Braun) -->
+        <div class="box form-braun">
+            <div class="form-braun-header">
+                <div class="braun-logo">Mr<br>B</div>
+                <div class="form-braun-title">Оформление заказа</div>
+            </div>
+            <form class="form-braun-body" action="#" method="POST">
+                <div class="form-group">
+                    <label class="form-label" for="fio">ФИО <span class="required">*</span></label>
+                    <input type="text" id="fio" name="fio" class="form-input" placeholder="Ваше имя" required>
+                </div>
+                <div class="form-group row">
+                    <div class="form-group">
+                        <label class="form-label" for="email">Email <span class="required">*</span></label>
+                        <input type="email" id="email" name="email" class="form-input" placeholder="mail@ru" required>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label" for="phone">Телефон <span class="required">*</span></label>
+                        <input type="tel" id="phone" name="phone" class="form-input" placeholder="+7..." required>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-label" for="comments">Комментарии</label>
+                    <textarea id="comments" name="comments" class="form-textarea" placeholder="Пожелания..."></textarea>
+                </div>
+                <button type="submit" class="submit-btn">Отправить</button>
+            </form>
+        </div>
+
+        <!-- Блок 4: Форма 2 (Nike Card) -->
+        <div class="box b4">
+            <div class="form-nike">
+                <div class="nike-card">
+                    <div class="nike-left">
+                        <svg class="nike-logo-sm" viewBox="0 0 24 24" fill="white">
+                            <path d="M21.367 15.111c-1.396.44-3.084.6-4.66.6-4.73 0-10.428-1.536-12.87-2.67 1.054 2.87 5.097 6.46 11.233 6.46 1.83 0 3.84-.36 5.37-.92.35-.12.63-.33.82-.57.19-.24.27-.51.27-.78 0-.58-.35-.95-.82-1.12z"/>
+                        </svg>
+                        <h3 class="nike-title">AIR STRUCTURE 19</h3>
+                        <p class="nike-desc">Dynamic Support и Zoom Air для высокой скорости и поддержки.</p>
+                        <div class="nike-price">12 995 ₽</div>
+                        <svg class="shoe-sm" viewBox="0 0 200 80" fill="rgba(255,255,255,0.3)">
+                            <ellipse cx="100" cy="40" rx="90" ry="30" />
+                        </svg>
+                    </div>
+                    <div class="nike-right">
+                        <div class="nike-header">
+                            <h4 class="nike-product-title">AIR STRUCTURE 19</h4>
+                            <span class="badge-new">NEW</span>
+                            <div class="nike-rating">★★★★☆</div>
+                        </div>
+                        <div class="nike-tabs">
+                            <div class="nike-tab active">ОПИСАНИЕ</div>
+                            <div class="nike-tab">ДЕТАЛИ</div>
+                            <div class="nike-tab">ОТЗЫВЫ</div>
+                        </div>
+                        <div class="nike-selectors">
+                            <div class="selector-label">РАЗМЕР</div>
+                            <div class="size-options">
+                                <div class="size-opt">7</div>
+                                <div class="size-opt">8</div>
+                                <div class="size-opt selected">9</div>
+                                <div class="size-opt">10</div>
+                                <div class="size-opt">11</div>
+                            </div>
+                            <div class="selector-label color-label">ЦВЕТ</div>
+                            <div class="color-options">
+                                <div class="color-opt selected" style="background:#00d2ff;"></div>
+                                <div class="color-opt" style="background:#ff4757;"></div>
+                                <div class="color-opt" style="background:#ffc107;"></div>
+                                <div class="color-opt" style="background:#111;"></div>
+                            </div>
+                        </div>
+                        <div class="nike-actions">
+                            <button class="btn-nike btn-add">В КОРЗИНУ</button>
+                            <button class="btn-nike btn-wish">♥</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Пустые блоки 5-9 (без стилизации) -->
+        <div class="box"></div>
+        <div class="box b6"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+
+    </div>
+
+    <footer>
+        <p>&copy; 2026 ВАРИАНТ 4. Адаптивная вёрстка.</p>
+    </footer>
+
+</body>
+</html>

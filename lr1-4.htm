@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Портфолио - Климович Вадим Русланович</title>
+    <!-- Иконка сайта -->
+    <link rel="icon" href="src/favicon.ico">
+
+    <!-- 1. ВНЕШНИЙ ФАЙЛ CSS (внешняя таблица стилей) -->
+    <link rel="stylesheet" href="src/style.css">
+
+    <!-- 2. ИМПОРТИРОВАНИЕ CSS (через @import) -->
+    <style>
+        @import url('src/import.css');
+    </style>
+
+    <!-- 3. ВНУТРЕННЯЯ ТАБЛИЦА СТИЛЕЙ (internal CSS) -->
+    <style>
+        /* ПОДКЛЮЧАЕМ ШРИФТ ИЗ ПАПКИ SRC */
+        @font-face {
+            font-family: 'MyFont';
+            src: url('src/ppp.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+
+        /* Универсальный селектор * - задаем box-sizing для всех элементов */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Селектор тега body - задаем общий фон и шрифт */
+        body {
+            font-family: 'MyFont', Arial, sans-serif;
+            background-color: #f4f4f4;
+            color: #333;
+            line-height: 1.6;
+            padding: 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        /* Селектор тега h1 - стилизуем главный заголовок */
+        h1 {
+            color: #2c3e50;
+            text-align: center;
+            border-bottom: 3px solid #3498db;
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+        }
+
+        /* Селектор тега h2 */
+        h2 {
+            color: #2980b9;
+            margin-top: 20px;
+        }
+
+        /* Селектор класса .highlight (пример для выделения важных моментов) */
+        .highlight {
+            background-color: #ffffcc;
+            padding: 5px;
+            border-left: 4px solid #f39c12;
+        }
+
+        /* Селектор идентификатора #main-footer */
+        #main-footer {
+            text-align: center;
+            margin-top: 30px;
+            padding: 10px;
+            background-color: #2c3e50;
+            color: #ecf0f1;
+            font-size: 0.9em;
+        }
+
+        /* Селектор псевдокласса :hover для ссылок */
+        a:hover {
+            color: #e74c3c;
+            text-decoration: underline;
+        }
+
+        /* Селектор псевдоэлемента ::before для абзацев с классом .note */
+        .note::before {
+            content: "⚡ ";
+            font-weight: bold;
+            color: #27ae60;
+        }
+
+        /* Дочерний селектор: применяем стиль только для <li>, которые являются прямыми потомками <ol> */
+        ol > li {
+            font-weight: bold;
+            color: #16a085;
+        }
+
+        /* Соседний селектор: стиль для абзаца, который идет сразу после h2 */
+        h2 + p {
+            font-style: italic;
+            color: #7f8c8d;
+        }
+
+        /* Селектор атрибута*/
+        a[href*="github"] {
+            background-color: #000;
+            color: #fff;
+            padding: 2px 6px;
+            border-radius: 5px;
+            text-decoration: none;
+        }
+
+        /* Еще один селектор атрибута: для ссылок, которые заканчиваются на .jpg (скачивание) */
+        a[href$=".jpg"] {
+            border: 1px dashed #e67e22;
+            padding: 2px 5px;
+        }
+
+        /* Контекстный селектор */
+        p a {
+            font-weight: 500;
+            color: #3498db;
+        }
+
+        /* Селектор псевдокласса :nth-child для четных строк таблицы */
+        tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+
+        /* Селектор псевдокласса :not для всех изображений, кроме тех, у которых есть класс */
+        img:not([class]) {
+            border-radius: 50%;
+            border: 5px solid #bdc3c7;
+        }
+
+        /* Селектор по классу для аудио и видео */
+        .media {
+            display: block;
+            margin: 10px 0;
+        }
+
+        /* Селектор идентификатора для ссылки наверх */
+        #top-link {
+            display: inline-block;
+            margin-top: 10px;
+            background-color: #3498db;
+            color: white;
+            padding: 5px 15px;
+            border-radius: 20px;
+            text-decoration: none;
+        }
+        
+        /* 1. ОФОРМЛЕНИЕ ТАБЛИЦЫ (серый фон) */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            background-color: #f0f0f0;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        
+        th, td {
+            border: 1px solid #999;
+            padding: 12px;
+            text-align: left;
+        }
+        
+        th {
+            background-color: #3498db;
+            color: white;
+            font-weight: bold;
+        }
+        
+        /* 2. ТЕНЬ ДЛЯ ФОТОГРАФИИ */
+        img[alt="Фото разработчика"] {
+            box-shadow: 10px 10px 15px rgba(0,0,0,0.3);
+            transition: box-shadow 0.3s;
+        }
+        
+        img[alt="Фото разработчика"]:hover {
+            box-shadow: 15px 15px 20px rgba(0,0,0,0.4);
+        }
+        
+        /* 3. ЗАЧЕРКНУТЫЙ ТЕКСТ */
+        .strikethrough {
+            text-decoration: line-through;
+            color: #999;
+        }
+        
+        p i {
+            text-decoration: line-through;
+        }
+        
+        /* 4. СТИЛИЗОВАННЫЙ СПИСОК */
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        
+        ul li {
+            background-color: #e9ecef;
+            margin: 8px 0;
+            padding: 12px 20px;
+            border-left: 5px solid #3498db;
+            border-radius: 0 8px 8px 0;
+            font-weight: 500;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        
+        ul li:hover {
+            transform: translateX(10px);
+            box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+            background-color: #d4e6f1;
+        }
+        
+        ul.custom-marker {
+            list-style-type: none;
+        }
+        
+        ul.custom-marker li::before {
+            content: "⚡ ";
+            color: #3498db;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div id="top"></div>
+
+    <!-- 4. ВНУТРИТЕГОВОЕ ВКЛЮЧЕНИЕ -->
+    <h1 style="font-family: 'Arial Black', sans-serif; letter-spacing: 2px;">Портфолио разработчика</h1>
+
+    <!-- ТЕКСТ -->
+    <p>Меня зовут <b>Климович Вадим Русланович</b>. Я начинающий разработчик, родился 30.03.2008.</p>
+    <!-- Пример использования класса highlight -->
+    <p class="highlight">Обучаюсь в <i>Гродненском Государственном Политехническом Колледже</i> на специальности 
+    "Разработка и сопровождение информационных технологий".</p>
+    <p class="note">Великолепно коммуницирую с людьми и активно использую <b>Figma</b> при работе.</p>
+    
+    <p class="strikethrough">Этот текст устарел и больше не актуален (зачеркнутый текст)</p>
+
+    <hr>
+
+    <!-- СПИСКИ -->
+    <h2>Мои навыки</h2>
+
+    <ul>
+        <li>C++</li>
+        <li>C#</li>
+        <li>Python</li>
+        <li>Kotlin</li>
+        <li>Swift</li>
+        <li>JavaScript</li>
+    </ul>
+
+    <h3>Чем я занимаюсь</h3>
+    <ol>
+        <li>Разработка программ</li>
+        <li>Создание UI/UX дизайна</li>
+        <li>Изучение новых технологий</li>
+    </ol>
+
+    <hr>
+
+    <!-- КАРТИНКА -->
+    <h2>Моё фото</h2>
+    <a href="ll.docx" download="ll.docx" style="text-decoration: none;">
+        <img src="ppp.jpg" alt="Фото разработчика" width="300" height="300">
+    </a>
+    <p><i>Нажми на фото, чтобы скачать</i> <span class="strikethrough">(устаревшая версия)</span></p>
+
+    <hr>
+
+    <!-- ГИПЕРССЫЛКИ -->
+    <h2>Полезные ссылки</h2>
+    <p>
+        <a href="https://github.com/vadoo777" target="_blank">Мой GitHub</a><br>
+        <a href="https://www.figma.com/board/wdnkLe2HmCzTpvLhmAdWvM/Untitled?node-id=0-1&p=f&t=wjPaMLLlWF3GP175-0" target="_blank">Figma</a><br>
+        <a href="ppp.jpg" download="ppp.jpg">Скачать изображение</a><br>
+        <a href="shp1.htm" target="_blank">ФОРМА</a><br>
+        <a href="#top" id="top-link">Наверх страницы</a>
+    </p>
+
+    <hr>
+
+    <!-- АУДИО -->
+    <h2>Аудио</h2>
+    <audio controls class="media">
+        <source src="./src/vv.mp3" type="audio/mpeg">
+        Ваш браузер не поддерживает аудио.
+    </audio>
+
+    <hr>
+
+    <!-- ВИДЕО -->
+    <h2>Видео</h2>
+    <video width="400" controls class="media">
+        <source src="src/sample.mp4" type="video/mp4">
+        Ваш браузер не поддерживает видео.
+    </video>
+
+    <hr>
+
+    <!-- ТАБЛИЦА -->
+    <h2>Образование и навыки</h2>
+
+    <table border="1">
+        <tr>
+            <th>Параметр</th>
+            <th>Описание</th>
+        </tr>
+        <tr>
+            <td>Учебное заведение</td>
+            <td>Гродненский Государственный Политехнический Колледж</td>
+        </tr>
+        <tr>
+            <td>Специальность</td>
+            <td>Разработка и сопровождение информационных технологий</td>
+        </tr>
+        <tr>
+            <td>Инструменты</td>
+            <td>Figma, VS Code, Visual Studio</td>
+        </tr>
+    </table>
+
+    <!-- Footer-->
+    <footer id="main-footer">
+        <p>© Климович Вадим Русланович</p>
+    </footer>
+</body>
+</html>

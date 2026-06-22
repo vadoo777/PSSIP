@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <title>Диалоговые окна</title>
+</head>
+<body>
+  <h2>Интерактивный диалог JS</h2>
+  <button id="startDialog">Запустить диалог</button>
+  <p id="output"></p>
+
+  <script>
+    document.getElementById('startDialog').onclick = function() {
+      //  window.prompt() – запрос данных
+      let name = window.prompt("Введите ваше имя:", "Гость");
+      
+      // Если пользователь нажал "Отмена", prompt вернёт null
+      if (name === null) {
+        window.alert("Вы отменили ввод. До свидания!");
+        return;
+      }
+      name = name.trim() || "Гость"; // Убираем пробелы, fallback
+
+      // 2window.confirm() – подтверждение действия
+      let isConfirmed = window.confirm(`${name}, вы уверены, что хотите продолжить?`);
+      
+      if (isConfirmed) {
+        //  window.alert() – информационное сообщение
+        window.alert(` Добро пожаловать, ${name}!\nОперация успешно завершена.`);
+        document.getElementById('output').textContent = `Результат: ${name} подтвердил действие.`;
+      } else {
+        window.alert(" Действие отменено пользователем.");
+        document.getElementById('output').textContent = "Действие отменено.";
+      }
+    };
+  </script>
+</body>
+</html>

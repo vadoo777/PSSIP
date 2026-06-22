@@ -1,0 +1,280 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #1a1a1a;
+    background-image: radial-gradient(circle at 50% 50%, #2e2e2e 0%, #111111 80%);
+    color: #fff;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: Arial, Helvetica, sans-serif;
+    overflow-x: hidden;
+    padding: 20px;
+}
+
+.app-wrapper {
+    position: relative;
+    width: 100%;
+    max-width: 1000px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Заголовок */
+.main-title {
+    margin-bottom: clamp(20px, 5vw, 50px);
+    font-size: clamp(1.8rem, 8vw, 4.5rem);
+    font-weight: 900;
+    color: #fff;
+    text-align: center;
+    letter-spacing: -0.05em;
+    width: 100%;
+    line-height: 1.1;
+}
+
+/* Логотип */
+.logo-container {
+    position: absolute;
+    top: -10px;
+    right: 0;
+    width: clamp(80px, 15vw, 130px);
+    height: clamp(80px, 15vw, 130px);
+    border: 3px solid #fff;
+    border-radius: 50%;
+    background: #000;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 0 25px rgba(0, 0, 0, 0.7);
+    z-index: 100;
+}
+
+.css-hat {
+    position: relative;
+    width: 50%;
+    height: clamp(14px, 3vw, 24px);
+    background: #fff;
+    border-radius: 25px 25px 2px 2px;
+    margin-top: -5px;
+    margin-bottom: 5px;
+}
+
+.css-hat::after {
+    content: "";
+    position: absolute;
+    bottom: -4px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 89%;
+    height: 6px;
+    background: #fff;
+    border-radius: 50%;
+}
+
+.logo-text {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    line-height: 1;
+}
+
+.logo-mr {
+    font-family: "Times New Roman", Times, serif;
+    font-size: clamp(1.5rem, 4vw, 2.8rem);
+    font-weight: bold;
+    color: #fff;
+}
+
+.logo-braun {
+    font-size: clamp(0.4rem, 1vw, 0.8rem);
+    font-weight: bold;
+    text-transform: uppercase;
+    color: #fff;
+    letter-spacing: 2px;
+    margin-top: -3px;
+}
+
+/* Форма */
+.form-container {
+    background: #ffffff;
+    width: 100%;
+    border-radius: 12px;
+    color: #333;
+    box-shadow: 0 25px 60px rgba(0, 0, 0, 0.7);
+    overflow: hidden;
+    position: relative;
+    z-index: 10;
+}
+
+.form-header {
+    padding: 25px clamp(20px, 5vw, 40px);
+    text-align: left;
+    border-bottom: 1px solid #e0e0e0;
+    font-weight: 800;
+    font-size: clamp(1.2rem, 3vw, 1.8rem);
+    color: #222;
+}
+
+.form-body {
+    padding: clamp(20px, 5vw, 50px);
+    display: flex;
+    flex-direction: column;
+    gap: clamp(15px, 3vw, 30px);
+}
+
+.form-group {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.form-group.textarea-group {
+    align-items: flex-start;
+}
+
+.form-label {
+    flex: 0 0 clamp(100px, 20vw, 220px);
+    text-align: right;
+    font-size: clamp(0.9rem, 1.5vw, 1.15rem);
+    font-weight: 700;
+    color: #333;
+}
+
+.required {
+    color: #d10000;
+    margin-left: 2px;
+}
+
+.form-input, .form-textarea {
+    flex: 1;
+    padding: clamp(10px, 1.5vw, 15px);
+    border: 1px solid #cccccc;
+    border-radius: 6px;
+    font-size: clamp(0.95rem, 1.5vw, 1.1rem);
+    outline: none;
+    background: #fff;
+    color: #333;
+    transition: border-color 0.2s, box-shadow 0.2s;
+    width: 100%;
+}
+
+.form-input:focus, .form-textarea:focus {
+    border-color: #3498db;
+    box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.1);
+}
+
+.form-textarea {
+    min-height: 120px;
+    resize: vertical;
+}
+
+.submit-btn-wrapper {
+    display: flex;
+    justify-content: center;
+    padding-top: 10px;
+}
+
+.submit-btn {
+    background: linear-gradient(to bottom, #ffffff 0%, #e8e8e8 100%);
+    border: 1px solid #bbbbbb;
+    padding: 15px clamp(40px, 10vw, 90px);
+    border-radius: 50px;
+    color: #222;
+    font-weight: 800;
+    font-size: clamp(1.1rem, 2.5vw, 1.5rem);
+    cursor: pointer;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transition: all 0.2s;
+}
+
+.submit-btn:hover {
+    background: linear-gradient(to bottom, #fdfdfd 0%, #dddddd 100%);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+    transform: translateY(-1px);
+}
+
+.submit-btn:active {
+    transform: translateY(1px);
+    box-shadow: inset 0 2px 5px rgba(0,0,0,0.1);
+}
+
+/* Уголок */
+.corner-ribbon {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 150px;
+    height: 150px;
+    overflow: hidden;
+    pointer-events: none;
+    z-index: 5;
+}
+
+.ribbon-bar {
+    position: absolute;
+    bottom: -30px;
+    left: -80px;
+    width: 300px;
+    height: 60px;
+    background: #f1c40f;
+    transform: rotate(45deg);
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+}
+
+/* АДАПТИВ ДЛЯ МОБИЛОК */
+@media (max-width: 768px) {
+    .app-wrapper {
+        padding-top: 100px; /* Чтобы логотип не перекрывал всё */
+    }
+
+    .logo-container {
+        position: absolute;
+        top: -80px;
+        right: 50%;
+        transform: translateX(50%);
+    }
+
+    .form-header {
+        text-align: center;
+    }
+
+    .form-group {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 8px;
+    }
+
+    .form-label {
+        text-align: left;
+        width: 100%;
+        flex: none;
+    }
+
+    .submit-btn {
+        width: 100%;
+    }
+    
+    .corner-ribbon {
+        display: none; /* Убираем ленту на мелких экранах для экономии места */
+    }
+}
+
+@media (max-width: 480px) {
+    body {
+        padding: 10px;
+    }
+    .form-body {
+        padding: 20px;
+    }
+    .main-title {
+        margin-top: 20px;
+    }
+}

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <title>4 способа подключения JS</title>
+  
+  <!-- Способ 1: Внутренний скрипт -->
+  <script>
+    console.log("Способ 1: Внутренний JS выполнился.");
+  </script>
+
+  <!-- Способ 2: Внешний скрипт  -->
+  <script src="external.js"></script>
+
+  <!-- Способ 4: Асинхронная загрузка -->
+  <script defer src="deferred.js"></script>
+  <script src="operators.js"></script>
+</head>
+<body>
+  <h1>Демонстрация подключения JS</h1>
+<h1>Операторы JavaScript</h1>
+    <div id="output"></div>
+    <script src="script-operators.js"></script>
+  <!-- Способ 3: Встроенный (inline) в атрибут события -->
+  <button onclick="console.log(' Способ 3: Inline JS выполнился.');">
+    Нажми 
+  </button>
+</body>
+</html>
